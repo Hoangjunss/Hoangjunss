@@ -1,0 +1,37 @@
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # Chạy tự động vào 0h mỗi ngày
+  workflow_dispatch:      # Cho phép chạy thủ công từ tab Actions
+  push:
+    branches: ["main"]    # Tự chạy mỗi khi bạn push code lên nhánh main
+
+jobs:
+  generate:
+    permissions:
+      contents: write      # Cấp quyền ghi để lưu ảnh
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Snake SVG
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to Output Branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
+          commit_message: "chore: update snake animation [skip ci]"
