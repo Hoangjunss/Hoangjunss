@@ -55,15 +55,6 @@
 ![Top language](https://stats.pphat.top/languages?username=HoangJunss)
 <br/>
 
-## 🏆 Contribution Highlights
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Hoangjunss/Hoangjunss/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Hoangjunss/Hoangjunss/output/github-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake.svg" />
-</picture>
-<p align="center">
-  🔥 <strong>Recent activity:</strong> Check out my <a href="https://github.com/HoangJunss?tab=overview">daily commits</a> and <a href="https://github.com/HoangJunss?tab=repositories">open-source contributions</a>.
-</p>
 
 ## 🔗 Connect with Me
 <p align="center">
